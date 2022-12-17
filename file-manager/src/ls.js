@@ -14,9 +14,14 @@ const ls = (testFolder) => {
     });
 
   let callback = (file) => {
-    const cur = {
-      Name: path.parse(file.name).name,
-    };
+    const cur = file.isFile()
+      ? {
+          Name: path.parse(file.name).name,
+        }
+      : {
+          Name: file.name,
+        };
+
     cur.Type = file.isDirectory() ? "directory" : "file";
 
     return cur;
