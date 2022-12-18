@@ -75,37 +75,3 @@ process.stdin.on("data", (data) => {
 );
 
 process.on("exit", () => process.stdout.write(finish));
-
-//console.log(dir);
-//ls(workingFolder);
-const test = `C:\\Users\\sycho\\RS`;
-//hash(`zoo.txt`);
-//cp(`C:\\Users\\sycho\\RS\\zoo.txt`, `C:\\Users\\sycho\\RS\\temp`);
-//mv(`C:\\Users\\sycho\\RS\\zoo.txt`, `C:\\Users\\sycho\\RS\\temp`);
-//rm(`RS/zoo.txt`);
-//cp path_to_file path_to_new_directory
-//rn(`C:\\Users\\sycho\\RS\\zoo.txt`, `myzoo.txt`);
-//add(`C:\\Users\\sycho\\RS\\test.txt`);
-//up();
-//cd(`C:\\Users\\sycho\\RS\\temp`);
-//ls(cd(test));
-//cat(`zoo.txt`);
-//npm run start -- --username=your_username
-//os("cpus");
-//decompress(`C:\\Users\\sycho\\RS\\temp\\zoo.txt.br`, `RS/temp`);
-//Invalid input
-//Operation failed
-
-/*
-stdout.write(
-  "Enter some text: (Enter 'exit' or press 'ctrl + c' to end task)\n"
-);
-
-stdin.on("data", (data) => {
-  if (data.toString().trim() === "exit") exit();
-  writableStream.write(data);
-});
-
-process.on("SIGINT", () => exit());
-process.on("exit", () => stdout.write("Good bye, my friend!"));
-*/
