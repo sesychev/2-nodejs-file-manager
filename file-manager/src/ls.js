@@ -1,11 +1,18 @@
-import { operation, input } from "./errors.js";
+import { operation, input, dir } from "./errors.js";
 import fs from "fs";
+import process from "process";
 import path from "path";
+import { homedir } from "os";
 
-const ls = (testFolder) => {
+const ls = async () => {
+  const workingFolderPath = homedir();
+  const testFolder =
+    workingFolderPath === process.cwd() ? workingFolderPath : process.cwd();
+
+  await fs.promises.access(testFolder);
   fs.promises
     .readdir(testFolder, { withFileTypes: true }, (e) => {
-      if (e) operation;
+      if (e) operation(e);
     })
     .then((files) => {
       let res = files.map(callback).sort(sortTypeName);
@@ -29,6 +36,8 @@ const ls = (testFolder) => {
 
   let sortTypeName = (a, b) =>
     a.Type.localeCompare(b.Type) || a.Name.localeCompare(b.Name);
+
+  dir(testFolder);
 };
 
 export default ls;
